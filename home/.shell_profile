@@ -1,5 +1,13 @@
+#  ## default PATH on 10.5 
+#  export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+#  ## the script PATH before changes
+#  export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+
+# bugfix: import and build off the existing $PATH (instead of overwriting it). 
+# - this is a fix to support applications that modify the $PATH (such as MacPorts, which adds "/opt/local/bin"), et
+export PATH=$PATH:$HOME/bin:/usr/local/sbin
+
 export LC_CTYPE='en_US.UTF-8'
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export RUBY_HEAP_MIN_SLOTS=250000
 export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
